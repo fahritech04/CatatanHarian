@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import org.d3if3009.catatanharian.ui.screen.AboutScreen
 import org.d3if3009.catatanharian.ui.screen.DetailScreen
 import org.d3if3009.catatanharian.ui.screen.HitungLuasKelilingScreen
 import org.d3if3009.catatanharian.ui.screen.KEY_ID_CATATAN
@@ -26,6 +27,9 @@ fun SetupNavGraph(navController: NavHostController = rememberNavController()) {
         }
         composable(route = Screen.HitungLuasKeliling.route) {
             HitungLuasKelilingScreen(navController)
+        }
+        composable(route = Screen.About.route) {
+            AboutScreen(navController)
         }
         composable(
             route = Screen.FormUbah.route,
