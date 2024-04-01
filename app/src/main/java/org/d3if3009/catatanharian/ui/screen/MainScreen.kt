@@ -24,7 +24,6 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -41,8 +40,6 @@ import org.d3if3009.catatanharian.ui.theme.CatatanHarianTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(navController: NavHostController) {
-    val context = LocalContext.current
-
     Scaffold(
         topBar = {
             TopAppBar(
@@ -68,7 +65,6 @@ fun MainScreen(navController: NavHostController) {
                 )
             }
         }
-
     ) { padding ->
         ScreenContent(Modifier.padding(padding), navController)
     }
@@ -78,7 +74,6 @@ fun MainScreen(navController: NavHostController) {
 fun ScreenContent(modifier: Modifier, navController: NavHostController) {
     val viewModel: MainViewModel = viewModel()
     val data = viewModel.data
-    val context = LocalContext.current
 
     if (data.isEmpty()) {
         Column(
@@ -129,7 +124,6 @@ fun ListItem(catatan: Catatan, onClick: () -> Unit) {
         Text(text = catatan.tanggal)
     }
 }
-
 
 @Preview(showBackground = true)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
