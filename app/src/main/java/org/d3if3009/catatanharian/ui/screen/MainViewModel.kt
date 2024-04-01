@@ -15,4 +15,5 @@ class MainViewModel(dao: CatatanDao) : ViewModel() {
         started = SharingStarted.WhileSubscribed(5000L),
         initialValue = emptyList()
     )
+
 }

@@ -5,17 +5,23 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.Search
+import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -42,6 +48,7 @@ import org.d3if3009.catatanharian.navigation.Screen
 import org.d3if3009.catatanharian.ui.theme.CatatanHarianTheme
 import org.d3if3009.catatanharian.util.ViewModelFactory
 
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(navController: NavHostController) {
@@ -54,9 +61,11 @@ fun MainScreen(navController: NavHostController) {
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     titleContentColor = MaterialTheme.colorScheme.primary,
-                )
+                ),
+
             )
         },
+
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
@@ -69,7 +78,47 @@ fun MainScreen(navController: NavHostController) {
                     tint = MaterialTheme.colorScheme.primary
                 )
             }
+        },
+
+        bottomBar = {
+            BottomAppBar(
+                modifier = Modifier
+                    .height(50.dp) // Atur ketinggian sesuai kebutuhan
+                    .fillMaxWidth(), // Memenuhi lebar layar
+                containerColor = MaterialTheme.colorScheme.primary,
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth(), // Memenuhi lebar layar
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween // Mengatur jarak antar ikon
+                ) {
+                    IconButton(
+                        onClick = { /* Handle navigation */ },
+                        modifier = Modifier.weight(1f) // Menyesuaikan lebar sesuai dengan proporsi yang sama
+                    ) {
+                        Icon(
+                            imageVector = Icons.Outlined.Home,
+                            contentDescription = "Home",
+                            tint = MaterialTheme.colorScheme.onPrimary
+                        )
+                    }
+                    IconButton(
+                        onClick = { /* Handle navigation */ },
+                        modifier = Modifier.weight(1f) // Menyesuaikan lebar sesuai dengan proporsi yang sama
+                    ) {
+                        Icon(
+                            imageVector = Icons.Outlined.Search,
+                            contentDescription = "Search",
+                            tint = MaterialTheme.colorScheme.onPrimary
+                        )
+                    }
+                    // Tambahkan ikon atau tombol lainnya di sini sesuai kebutuhan
+                }
+            }
         }
+
+
     ) { padding ->
         ScreenContent(Modifier.padding(padding), navController)
     }
