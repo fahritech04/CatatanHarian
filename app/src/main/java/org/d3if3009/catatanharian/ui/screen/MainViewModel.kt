@@ -1,24 +1,18 @@
 package org.d3if3009.catatanharian.ui.screen
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.stateIn
+import org.d3if3009.catatanharian.database.CatatanDao
 import org.d3if3009.catatanharian.model.Catatan
 
-class MainViewModel : ViewModel() {
+class MainViewModel(dao: CatatanDao) : ViewModel() {
 
-    val data = getDataDummy()
-
-    private fun getDataDummy(): List<Catatan> {
-        val data = mutableListOf<Catatan>()
-        for (i in 29 downTo 20 ) {
-            data.add(
-                Catatan(
-                    i.toLong(),
-                    "Kuliah Mobpro $i Feb",
-                    "Yey, hari ini belajar membuat aplikasi Android counter dan berhasil. Hehe.. Mudah2an modul selanjutnya juga lancar. Aamiin.",
-                    "2024-02-$i 12:34:56"
-                )
-            )
-        }
-        return data
-    }
+    val data: StateFlow<List<Catatan>> = dao.getCatatan().stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000L),
+        initialValue = emptyList()
+    )
 }
