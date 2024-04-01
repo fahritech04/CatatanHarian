@@ -1,16 +1,28 @@
 package org.d3if3009.catatanharian.ui.screen
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import org.d3if3009.catatanharian.database.CatatanDao
 import org.d3if3009.catatanharian.model.Catatan
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
-class DetailViewModel : ViewModel() {
+class DetailViewModel(private val dao: CatatanDao) : ViewModel() {
 
-    fun getCatatan(id: Long): Catatan {
-        return Catatan(
-            id,
-            "Kuliah Mobpro $id Feb",
-            "Yey, hari ini belajar membuat aplikasi Android counter dan berhasil. Hehe.. Mudah2an modul selanjutnya juga lancar. Aamiin.",
-            "2024-02-$id 12:34:56"
+    private val formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US)
+
+    fun insert(judul: String, isi: String) {
+        val catatan = Catatan(
+            tanggal = formatter.format(Date()),
+            judul   = judul,
+            catatan = isi
         )
+
+        viewModelScope.launch(Dispatchers.IO) {
+            dao.insert(catatan)
+        }
     }
 }
