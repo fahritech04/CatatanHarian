@@ -23,4 +23,6 @@
     <string name="input_error">Tidak boleh kosong.</string>
     <string name="bagikan">Bagikan</string>
     <string name="bagikan_template">Luas: %1$s \nKeliling: %2$s</string>
+
+    <string name="hitung_luaskeliling">Menghitung Luas dan Keliling</string>
 </resources>

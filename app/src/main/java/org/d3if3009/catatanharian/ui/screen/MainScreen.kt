@@ -14,8 +14,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.outlined.Home
-import androidx.compose.material.icons.outlined.Search
+import androidx.compose.material.icons.outlined.Star
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -83,37 +82,37 @@ fun MainScreen(navController: NavHostController) {
         bottomBar = {
             BottomAppBar(
                 modifier = Modifier
-                    .height(50.dp) // Atur ketinggian sesuai kebutuhan
-                    .fillMaxWidth(), // Memenuhi lebar layar
+                    .height(50.dp)
+                    .fillMaxWidth(),
                 containerColor = MaterialTheme.colorScheme.primary,
             ) {
                 Row(
                     modifier = Modifier
-                        .fillMaxWidth(), // Memenuhi lebar layar
+                        .fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween // Mengatur jarak antar ikon
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
+
                     IconButton(
-                        onClick = { /* Handle navigation */ },
-                        modifier = Modifier.weight(1f) // Menyesuaikan lebar sesuai dengan proporsi yang sama
+                        onClick = { navController.navigate(Screen.HitungLuasKeliling.route) },
+                        modifier = Modifier.weight(1f)
                     ) {
-                        Icon(
-                            imageVector = Icons.Outlined.Home,
-                            contentDescription = "Home",
-                            tint = MaterialTheme.colorScheme.onPrimary
-                        )
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Icon(
+                                imageVector = Icons.Outlined.Star,
+                                contentDescription = "Hitung",
+                                tint = MaterialTheme.colorScheme.onPrimary
+                            )
+                            Text(
+                                text = "Hitung",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onPrimary
+                            )
+                        }
                     }
-                    IconButton(
-                        onClick = { /* Handle navigation */ },
-                        modifier = Modifier.weight(1f) // Menyesuaikan lebar sesuai dengan proporsi yang sama
-                    ) {
-                        Icon(
-                            imageVector = Icons.Outlined.Search,
-                            contentDescription = "Search",
-                            tint = MaterialTheme.colorScheme.onPrimary
-                        )
-                    }
-                    // Tambahkan ikon atau tombol lainnya di sini sesuai kebutuhan
+
                 }
             }
         }
