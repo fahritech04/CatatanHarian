@@ -32,13 +32,16 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import org.d3if3009.catatanharian.R
 import org.d3if3009.catatanharian.model.Catatan
+import org.d3if3009.catatanharian.navigation.Screen
 import org.d3if3009.catatanharian.ui.theme.CatatanHarianTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen() {
+fun MainScreen(navController: NavHostController) {
     val context = LocalContext.current
 
     Scaffold(
@@ -56,7 +59,7 @@ fun MainScreen() {
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    Toast.makeText(context, R.string.belum_bisa, Toast.LENGTH_SHORT).show()
+                    navController.navigate(Screen.FormBaru.route)
                 }
             ) {
                 Icon(
@@ -80,7 +83,9 @@ fun ScreenContent(modifier: Modifier) {
 
     if (data.isEmpty()) {
         Column(
-            modifier = modifier.fillMaxSize().padding(16.dp),
+            modifier = modifier
+                .fillMaxSize()
+                .padding(16.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -106,7 +111,8 @@ fun ScreenContent(modifier: Modifier) {
 @Composable
 fun ListItem(catatan: Catatan, onClick: () -> Unit) {
     Column(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
             .clickable { onClick() }
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -132,6 +138,6 @@ fun ListItem(catatan: Catatan, onClick: () -> Unit) {
 @Composable
 fun ScreenPreview() {
     CatatanHarianTheme {
-        MainScreen()
+        MainScreen(rememberNavController())
     }
 }
