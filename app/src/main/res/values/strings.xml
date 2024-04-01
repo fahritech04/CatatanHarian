@@ -12,4 +12,15 @@
     <string name="invalid">Judul dan isi catatan tidak boleh kosong.</string>
     <string name="lainnya">Opsi lainnya</string>
     <string name="hapus">Hapus catatan</string>
+
+    <string name="bangundatar_intro">Mari menghitung luas dan keliling persegi panjang! Masukan data berikut: </string>
+    <string name="panjang">Panjang</string>
+    <string name="lebar">Lebar</string>
+    <string name="hitung">Hitung</string>
+    <string name="reset">Reset</string>
+    <string name="luas">Luas</string>
+    <string name="keliling">Keliling</string>
+    <string name="input_error">Tidak boleh kosong.</string>
+    <string name="bagikan">Bagikan</string>
+    <string name="bagikan_template">Luas: %1$s \nKeliling: %2$s</string>
 </resources>
