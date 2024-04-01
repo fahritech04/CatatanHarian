@@ -25,4 +25,21 @@ class DetailViewModel(private val dao: CatatanDao) : ViewModel() {
             dao.insert(catatan)
         }
     }
+
+    suspend fun getCatatan(id: Long): Catatan? {
+        return dao.getCatatanById(id)
+    }
+
+    fun update(id: Long, judul: String, isi: String) {
+        val catatan = Catatan(
+            id      = id,
+            tanggal = formatter.format(Date()),
+            judul   = judul,
+            catatan = isi
+        )
+
+        viewModelScope.launch(Dispatchers.IO) {
+            dao.update(catatan)
+        }
+    }
 }
