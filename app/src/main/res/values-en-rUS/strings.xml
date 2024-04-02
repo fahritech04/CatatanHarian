@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="list_kosong">No Data Yet</string>
+    <string name="x_diklik">%1$s clicked!</string>
+    <string name="tambah_catatan">Add note</string>
+    <string name="belum_bisa">Can\'t add notes yet.</string>
+    <string name="judul">Title</string>
+    <string name="isi_catatan">Fill Notes</string>
+    <string name="kembali">Return</string>
+    <string name="simpan">Save</string>
+    <string name="edit_catatan">Change notes</string>
+    <string name="invalid">The title and content of the note cannot be empty.</string>
+    <string name="lainnya">More options</string>
+    <string name="hapus">Delete note</string>
+    <string name="bangundatar_intro">Let\'s calculate the area and perimeter of a rectangle! Enter the following data:</string>
+    <string name="panjang">Long</string>
+    <string name="lebar">Wide</string>
+    <string name="hitung">Count</string>
+    <string name="reset">Reset</string>
+    <string name="luas">Area</string>
+    <string name="keliling">Around</string>
+    <string name="input_error">Can not be empty</string>
+    <string name="bagikan">Share</string>
+    <string name="bagikan_template">Area: %1$s Perimeter: %2$s</string>
+    <string name="hitung_luaskeliling">Calculating Area and Perimeter</string>
+    <string name="tentang_aplikasi">About Application</string>
+    <string name="copyright">Daily Notes is an Android application that allows users to record their daily activities and also provides a feature to calculate the area and perimeter of flat shapes by entering the appropriate length and width. This application was developed to meet users\' needs in recording daily activities and making it easy to calculate the area and perimeter of flat shapes. Copyright 2024 Muhammad Raihan Fahrifi. All rights reserved.</string>
+    <string name="app_name">Diary</string>
+</resources>
