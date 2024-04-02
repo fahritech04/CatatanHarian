@@ -120,7 +120,7 @@ fun MainScreen(navController: NavHostController) {
                                 tint = MaterialTheme.colorScheme.onPrimary
                             )
                             Text(
-                                text = "Hitung",
+                                text = stringResource(R.string.hitung),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onPrimary
                             )
