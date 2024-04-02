@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Catatan Harian</string>
     <string name="list_kosong">Belum ada data</string>
     <string name="x_diklik">%1$s diklik!</string>
     <string name="tambah_catatan">Tambah catatan</string>
@@ -22,10 +21,11 @@
     <string name="keliling">Keliling</string>
     <string name="input_error">Tidak boleh kosong.</string>
     <string name="bagikan">Bagikan</string>
-    <string name="bagikan_template">Luas: %1$s \nKeliling: %2$s</string>
+    <string name="bagikan_template">Luas: %1$s  Keliling: %2$s</string>
 
     <string name="hitung_luaskeliling">Menghitung Luas dan Keliling</string>
 
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
-    <string name="copyright"><string name="copyright">Catatan Harian adalah sebuah aplikasi Android yang memungkinkan pengguna untuk mencatat kegiatan sehari-hari mereka dan juga menyediakan fitur untuk menghitung luas dan keliling bangun datar dengan memasukkan panjang dan lebar yang sesuai.\n\nAplikasi ini dikembangkan untuk memenuhi kebutuhan pengguna dalam mencatat aktivitas sehari-hari dan memberikan kemudahan dalam menghitung luas dan keliling bangun datar.\n\nCopyright 2024\nMuhammad Raihan Fahrifi.\nAll rights reserved.</string></string>
+    <string name="copyright">Catatan Harian adalah sebuah aplikasi Android yang memungkinkan pengguna untuk mencatat kegiatan sehari-hari mereka dan juga menyediakan fitur untuk menghitung luas dan keliling bangun datar dengan memasukkan panjang dan lebar yang sesuai.  Aplikasi ini dikembangkan untuk memenuhi kebutuhan pengguna dalam mencatat aktivitas sehari-hari dan memberikan kemudahan dalam menghitung luas dan keliling bangun datar.  Copyright 2024 Muhammad Raihan Fahrifi. All rights reserved.</string>
+    <string name="app_name">Catatan Harian</string>
 </resources>
